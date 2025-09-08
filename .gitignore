@@ -1,0 +1,71 @@
+# Rust 
+/target/
+**/*.rs.bk
+*.pdb
+
+# Archivos de compilación
+Cargo.lock
+*.rlib
+*.rmeta
+
+# Archivos de depuración
+debug/
+
+# Archivos de IDE y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Archivos temporales del sistema
+*.tmp
+*.temp
+.cache/
+
+# Configuraciones locales
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+
+# Documentación generada
+/doc/
+/docs/book/
+/docs/src/
+
+# Archivos de backup
+*.bak
+*.backup
+*~
+
+# Archivos de prueba
+/tests/tmp/
+/tmp/
+
+GEMINI.md
+
+# Dependencias del sistema
+*.dll
+*.so
+*.dylib
+
+# Archivos de configuración específicos del usuario
+.cargo/config.toml
+
+# Archivos de benchmarks
+/benches/results/
+
+# Coverage reports
+tarpaulin-report.html
+cobertura.xml
+lcov.info
+
+# Flamegraph
+flamegraph.svg
+perf.data*
