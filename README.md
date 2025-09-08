@@ -29,7 +29,7 @@ Producto de mi acercamiento a Rust. Se podría decir que es un intento de reescr
 1. Descargar el ejectucable.
 2. Agregarlo al PATH.
 3. Ejecutarlo desde tu consola preferida. La primera vez es necesario configurar el directorio principal pasándolo como argumento:
-   `rusted-player.exe "D:\TuRuta\"
+   `rusted-player.exe "D:\TuRuta\"`
 
 ### Binds
 
