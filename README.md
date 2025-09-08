@@ -16,7 +16,7 @@ Producto de mi acercamiento a Rust. Se podría decir que es un intento de reescr
 *   **Gestión de playlist:** Crea, elimina y añade pistas a playlists.
 *   **Reproducción de música:** Reproduce, pausa, salta y controla el volumen de la música.
 *   **Modo aleatorio:** Reproduce tu música en modo aleatorio.
-*   **Búsqueda:** Busca algo específico. .
+*   **Búsqueda:** Busca algo específico.
 *   **Pestaña de estadísticas:** Consulta las estadísticas de tu biblioteca de música, que incluyen:
     *   Total de pistas, géneros, artistas y álbumes.
     *   Duración total de la biblioteca de música.
@@ -28,7 +28,7 @@ Producto de mi acercamiento a Rust. Se podría decir que es un intento de reescr
 
 1. Descargar el ejectucable.
 2. Agregarlo al PATH.
-3. Ejecutarlo desde tu consola preferida. La primera vez es necesario configurar el directorio principal pasandolo como argumento:
+3. Ejecutarlo desde tu consola preferida. La primera vez es necesario configurar el directorio principal pasándolo como argumento:
    `rusted-player.exe "D:\TuRuta\"
 
 ### Binds
