@@ -1,9 +1,9 @@
-use std::{env, io};
+use std::{env, io, path::PathBuf};
 
 mod models;
 mod services;
 
-pub use services::config_service;
+use services::config_service;
 use services::ui_manager;
 
 fn main() -> io::Result<()> {
@@ -11,16 +11,20 @@ fn main() -> io::Result<()> {
 
     // Si se da un argumento se establece como path
     if args.len() > 1 {
-        let music_path = args[1].clone();
-        if std::path::Path::new(&music_path).is_dir() {
+        let music_path = PathBuf::from(&args[1]);
+        if music_path.is_dir() {
             let config = models::config::Config { music_path };
             config_service::save_config(&config)?;
-            println!("Music path set to '{}' and saved.", config.music_path);
+            println!(
+                "Music path set to '{}' and saved.",
+                config.music_path.display()
+            );
             ui_manager::run(&config)?;
         } else {
-            println!("Error: The provided path is not a valid directory.");
-            let mut input = String::new();
-            io::stdin().read_line(&mut input)?;
+            println!("Error: '{}' is not a valid directory.", args[1]);
+            println!("Press Enter to exit...");
+            let mut _input = String::new();
+            io::stdin().read_line(&mut _input)?;
         }
         return Ok(());
     }
@@ -28,20 +32,28 @@ fn main() -> io::Result<()> {
     // si no, se carga desde cfg el path establecido
     let config = config_service::load_config();
 
-    if config.music_path.is_empty() {
+    if config.music_path.as_os_str().is_empty() {
         println!("Music path is not set.");
-        println!("Please run the application with the path to your music directory as an argument:");
+        println!(
+            "Please run the application with the path to your music directory as an argument:"
+        );
         println!(r#"Example: rusted-player.exe "C:\Users\YourUser\Music""#);
-        let mut input = String::new();
-        io::stdin().read_line(&mut input)?;
+        println!(r#"         rusted-player "/home/username/Music""#);
+        println!("Press Enter to exit...");
+        let mut _input = String::new();
+        io::stdin().read_line(&mut _input)?;
         return Ok(());
     }
 
-    if !std::path::Path::new(&config.music_path).is_dir() {
-        println!("Error: The saved music path is not a valid directory.");
+    if !config.music_path.is_dir() {
+        println!(
+            "Error: '{}' is not a valid directory.",
+            config.music_path.display()
+        );
         println!("Please run the application with a valid path to update it.");
-        let mut input = String::new();
-        io::stdin().read_line(&mut input)?;
+        println!("Press Enter to exit...");
+        let mut _input = String::new();
+        io::stdin().read_line(&mut _input)?;
         return Ok(());
     }
 
