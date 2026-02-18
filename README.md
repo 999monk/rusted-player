@@ -39,10 +39,8 @@ Esta versión incluye mejoras significativas en robustez, rendimiento y compatib
 
 1. Descargar el ejectucable.
 2. Agregarlo al PATH.
-<<<<<<< HEAD
 3. Ejecutarlo desde tu consola preferida. La primera vez es necesario configurar el directorio principal pasándolo como argumento:
    `rusted-player.exe "D:\TuRuta\"`
-=======
 3. Ejecutarlo desde tu consola preferida. La primera vez es necesario configurar el directorio principal pasandolo como argumento:
    `rusted-player.exe "\TuRuta\"
 
