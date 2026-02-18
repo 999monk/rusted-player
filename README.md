@@ -45,7 +45,6 @@ Esta versión incluye mejoras significativas en robustez, rendimiento y compatib
 =======
 3. Ejecutarlo desde tu consola preferida. La primera vez es necesario configurar el directorio principal pasandolo como argumento:
    `rusted-player.exe "\TuRuta\"
->>>>>>> e0b8bab (fixex and general refactoring)
 
 ### Binds
 
