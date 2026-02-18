@@ -1,4 +1,4 @@
-# Rust 
+# Rust
 /target/
 **/*.rs.bk
 *.pdb
@@ -49,6 +49,7 @@ logs/
 /tmp/
 
 GEMINI.md
+AGENTS.md
 
 # Dependencias del sistema
 *.dll
